@@ -14,6 +14,7 @@ const YCHANNEL: u8 = 2;
 const BUTTONCHANNEL: u8 = 0;
 
 
+<<<<<<< HEAD
 fn main() {
 
     let mut mcp3008 = Mcp3008::new(Spi::new(Bus::Spi0, SlaveSelect::Ss0, SPI_CLOCK_SPEED, Mode::Mode0).unwrap()).unwrap();
@@ -36,5 +37,14 @@ fn main() {
         thread::sleep(Duration::from_millis(500));
         pin.set_low();
     }*/
+=======
+    // Blink the LED by setting the pin's logic level high for 500 ms.
+    loop{
+        pin.set_high();
+        thread::sleep(Duration::from_millis(500));
+        pin.set_low();
+        thread::sleep(Duration::from_millis(500));
+    }
+>>>>>>> Blinking Led
     //Ok(())
 }
