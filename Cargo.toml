@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 rppal = "0.11.3"
+mcp3xxx = "0.1.0-pre.1"

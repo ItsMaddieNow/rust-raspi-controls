@@ -13,6 +13,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2f02823cf78b754822df5f7f268fb59822e7296276d3e069d8e8cb26a14bd10"
 
 [[package]]
+name = "mcp3xxx"
+version = "0.1.0-pre.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae4b579d8048dfb12ed62a120f4a7dbc8277d9406fdfc9494f76d1a024c28a9d"
+dependencies = [
+ "rppal",
+]
+
+[[package]]
 name = "rppal"
 version = "0.11.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -26,5 +35,6 @@ dependencies = [
 name = "rust-raspi-controls"
 version = "0.1.0"
 dependencies = [
+ "mcp3xxx",
  "rppal",
 ]
