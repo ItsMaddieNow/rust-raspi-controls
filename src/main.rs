@@ -18,7 +18,7 @@ fn main() {
 
     let mut mcp3008 = Mcp3008::new(Spi::new(Bus::Spi0, SlaveSelect::Ss0, SPI_CLOCK_SPEED, Mode::Mode0).unwrap()).unwrap();
 
-    let args = std::env::args().collect::<Vec<String>>();
+    //let args = std::env::args().collect::<Vec<String>>();
 
     let result = mcp3008.single_ended_read(Channel::new(XCHANNEL).unwrap()).unwrap();
     
