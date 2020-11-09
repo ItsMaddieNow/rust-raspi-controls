@@ -17,7 +17,11 @@ const BUTTONCHANNEL: u8 = 0;
 
 fn main() -> Result<(), Box<dyn Error>> {
 
+<<<<<<< HEAD
    
+=======
+    //let args = std::env::args().collect::<Vec<String>>();
+>>>>>>> 1f93be4bd84e9b884ed0b90faa5b372fbb5b9f9c
 
     println!("Blinking an LED on a {}.", DeviceInfo::new()?.model());
     let mut pin = Gpio::new()?.get(GPIO_LED)?.into_output();

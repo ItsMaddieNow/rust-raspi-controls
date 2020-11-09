@@ -3,9 +3,13 @@ name = "rust-raspi-controls"
 version = "0.1.0"
 authors = ["pi"]
 edition = "2018"
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 rppal = "0.11.3"
+<<<<<<< HEAD
 mcp3008 = "1.0.0"
+=======
+mcp3xxx = "0.1.0-pre.1"
+uinput = "0.1.3"
+>>>>>>> 1f93be4bd84e9b884ed0b90faa5b372fbb5b9f9c
