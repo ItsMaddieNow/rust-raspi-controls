@@ -10,18 +10,16 @@ use mcp3008::Mcp3008;
 const GPIO_LED: u8 = 23;
 
 //const SPI_CLOCK_SPEED: u32 = 1_000_000;
-const XCHANNEL: u8 = 1;
-const YCHANNEL: u8 = 2;
-const BUTTONCHANNEL: u8 = 0;
+const LEFT_X_CHANNEL: u8 = 1;
+const LEFT_Y_CHANNEL: u8 = 2;
+const LEFT_BUTTON_CHANNEL: u8 = 0;
+const RIGHT_X_CHANNEL: u8 = 4;
+const RIGHT_Y_CHANNEL: u8 = 5;
+const RIGHT_BUTTON_CHANNEL: u8 = 3;
 
 
 fn main() -> Result<(), Box<dyn Error>> {
 
-<<<<<<< HEAD
-   
-=======
-    //let args = std::env::args().collect::<Vec<String>>();
->>>>>>> 1f93be4bd84e9b884ed0b90faa5b372fbb5b9f9c
 
     println!("Blinking an LED on a {}.", DeviceInfo::new()?.model());
     let mut pin = Gpio::new()?.get(GPIO_LED)?.into_output();
@@ -29,10 +27,12 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Blink the LED by setting the pin's logic level high for 500 ms.
     loop{
-        println!("Button {}", mcp3008.read_adc(BUTTONCHANNEL).unwrap());
-        println!("X Co-ord {}", mcp3008.read_adc(XCHANNEL).unwrap());
-        println!("Y Co-ord {}", mcp3008.read_adc(YCHANNEL).unwrap());
+        println!("Joystick 1 :");
+        println!("    Button {}", mcp3008.read_adc(BUTTON_CHANNEL).unwrap());
+        println!("    X Co-ord {}", mcp3008.read_adc(XCHANNEL).unwrap());
+        println!("    Y Co-ord {}", mcp3008.read_adc(YCHANNEL).unwrap());
 
+        println!("Joystick 2 :");
         pin.set_high();
         thread::sleep(Duration::from_millis(500));
         pin.set_low();
