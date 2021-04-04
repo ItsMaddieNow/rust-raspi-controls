@@ -7,8 +7,37 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug",
-            "program": "${workspaceFolder}/<your program>",
+            "name": "Debug executable 'rust-raspi-controls'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust-raspi-controls",
+                    "--package=rust-raspi-controls"
+                ],
+                "filter": {
+                    "name": "rust-raspi-controls",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rust-raspi-controls'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rust-raspi-controls",
+                    "--package=rust-raspi-controls"
+                ],
+                "filter": {
+                    "name": "rust-raspi-controls",
+                    "kind": "bin"
+                }
+            },
             "args": [],
             "cwd": "${workspaceFolder}"
         }
